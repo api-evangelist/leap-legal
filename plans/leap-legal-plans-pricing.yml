@@ -1,0 +1,90 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: LEAP
+providerId: leap-legal
+created: '2026-07-04'
+modified: '2026-07-04'
+reconciled: false
+tags:
+- Legal
+- LegalTech
+- Practice Management
+- Plans
+description: >-
+  LEAP does not publish per-user subscription rates on its official US pricing
+  page (leaplegalsoftware.com/us/pricing) - the page directs prospects to
+  "Request Pricing" for a custom quote and notes an optional one-time
+  implementation fee (data migration, training, firm-specific template setup).
+  Third-party software-review aggregators (Software Finder, GetApp,
+  SoftwareSuggest, and others) report quoted per-user, per-month figures
+  ranging roughly from $50 to $149, but these are unverified third-party
+  estimates, not figures published by LEAP itself, and likely vary by firm
+  size, practice area, and region (AU/UK/US/CA/IE/NZ). The LEAP Developer
+  Console and Marketplace listing/API access are separate from firm
+  subscription pricing and are not publicly priced either.
+notes: >-
+  No official numeric pricing exists to reconcile. Verify current terms
+  directly with LEAP sales; this file only reflects the qualitative,
+  quote-based subscription model described on leaplegalsoftware.com/us/pricing
+  plus unverified third-party aggregator estimates.
+sources:
+- https://www.leaplegalsoftware.com/us/pricing/
+- https://softwarefinder.com/legal/leap-us
+- https://www.getapp.com/legal-law-software/a/leap/pricing/
+- https://www.softwaresuggest.com/leap-legal
+plans:
+- id: leap-subscription
+  name: LEAP Subscription (Custom Quote)
+  type: paid
+  description: >-
+    Per-user, per-month cloud subscription covering case/matter management,
+    document automation, legal accounting, trust accounting, and billing.
+    LEAP does not publish a rate card; pricing is quoted per firm based on
+    user count, practice area(s), and region. An optional one-time
+    implementation fee may apply (legacy data migration, training,
+    firm-specific template setup).
+  entries:
+  - label: Per-User Subscription
+    name: per-user-subscription
+    type: flat
+    metric: user
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: quote-based; third-party estimates ~$50-$149/user/month
+    userMultiplied: true
+  elements:
+  - name: Case & Matter Management
+  - name: Document Automation & Court Forms
+  - name: Legal & Trust Accounting
+  - name: Time Recording & Billing
+  - name: Microsoft 365 Integration
+  - name: Mobile App Access
+- id: leap-marketplace-developer
+  name: LEAP Developer Console / Marketplace
+  type: partner
+  description: >-
+    Free developer registration at console.leap.build to build and submit
+    Marketplace apps against LEAP's REST APIs; no self-serve API pricing is
+    published. Apps go through a submission and review process before
+    listing in the LEAP Marketplace.
+  entries:
+  - label: Developer Registration
+    name: developer-registration
+    type: flat
+    metric: account
+    limit: -1
+    timeFrame: n/a
+    geo: global
+    unit: 1
+    price: free to register; app review required for Marketplace listing
+    userMultiplied: false
+  elements:
+  - name: Developer Console Access
+  - name: API Reference & Knowledge Base
+  - name: App Submission & Review
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

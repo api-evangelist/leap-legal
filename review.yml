@@ -1,0 +1,129 @@
+aid: leap-legal
+name: LEAP
+review:
+  question: Does LEAP expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-04'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. LEAP does not publish a public,
+    self-serve API reference of any protocol - REST, SSE, or WebSocket. The
+    LEAP Developer Console and knowledge base confirm a REST API exists and
+    is versioned (API Reference release notes v1.0.4 and v1.0.5 were found),
+    but the concrete technical reference - endpoint paths, base URL, request/
+    response schema, and authentication flow - sits behind developer
+    registration and app review, and was not accessible without an approved
+    developer account. There is no evidence anywhere in the public marketing
+    site, developer knowledge base, or Marketplace of a WebSocket or SSE
+    transport; every documented capability description implies conventional
+    request/response REST.
+findings:
+  summary: |
+    LEAP does not publish a documented public WebSocket API, and it does not
+    publish a fully public REST API reference either. LEAP is cloud-based
+    legal practice management software (matters, contacts/clients, document
+    automation and court forms, time recording, billing, and trust
+    accounting), integrated with Microsoft 365. LEAP operates a real developer
+    platform - a Developer Console (console.leap.build), a knowledge base and
+    "API Reference" (developer.leap.build), and a Marketplace
+    (marketplace.leap.build) where approved developers list apps after a
+    submission/review process. Release notes exist for "API Reference"
+    versions v1.0.4 (May 2023) and v1.0.5 (August 2023), and a dedicated
+    "Security & API Credentials" knowledge-base article exists, confirming a
+    real, evolving, credentialed REST API. However, the actual API Reference
+    pages (leap.build/docs/developer-api-reference/*) render almost no
+    server-side content - they appear to be a JavaScript application gated
+    behind developer console login - so no endpoint paths, base URL, or
+    request/response schema could be confirmed publicly. A third-party
+    integration vendor (Supergood) markets an "unofficial" LEAP integration
+    built by browser/session automation rather than LEAP's official REST API;
+    that source was not used to populate confirmed endpoints here, since it
+    does not represent LEAP's own published surface. No ws:// or wss://
+    endpoint is referenced anywhere in LEAP's marketing site, developer
+    knowledge base, or Marketplace listings.
+  accessModel: |
+    Gated / partner-provisioned. Building an integration requires free
+    registration at console.leap.build, followed by building against APIs
+    documented in a login-gated developer console and knowledge base, then
+    submitting the finished app for review before it can be listed in the
+    LEAP Marketplace (see "How To Submit an App for Review" and
+    "Demonstrating your Integration with LEAP" in the knowledge base). There
+    is no anonymous, self-serve API key signup and no publicly browsable
+    OpenAPI/Swagger document.
+  transports:
+    - protocol: REST
+      scheme: https
+      documented: true
+      note: LEAP's Developer Console references a versioned "API Reference" (v1.0.4, v1.0.5) and REST APIs for desktop, web, and mobile integration. Endpoint paths and base URL are not publicly disclosed outside the gated developer console.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented anywhere on leap.build, developer.leap.build, or marketplace.leap.build as of the review date.
+  endpointsPubliclyDocumented: []
+  endpointsNote: |
+    No concrete endpoint paths, base URL, or request/response schemas are
+    published outside LEAP's gated developer console. The apis.yml entries
+    for Matters & Contacts, Time & Billing, Trust Accounting, Documents, and
+    Calendar are therefore honestly marked endpointsModeled: true and carry
+    no OpenAPI document, base URL, or fabricated endpoint list - they are
+    inferred capability groupings from LEAP's marketed product features and
+    from confirmed, live Marketplace integrations (Xero, Zoom, InfoTrack,
+    LawTap), not from a crawled technical reference.
+sources:
+  - url: https://developer.leap.build/
+    type: Documentation
+    note: Developer portal landing page - Documentation, APIs, Design System sections; "Become a Developer" / Developer Console registration.
+  - url: https://developer.leap.build/knowledge-base/general/general-getting-started/
+    type: Documentation
+    note: Getting-started knowledge base article for building a LEAP Marketplace app.
+  - url: https://developer.leap.build/knowledge-base/general/security-api-credentials/
+    type: Documentation
+    note: Dedicated Security & API Credentials knowledge-base article confirming a credentialed API, though full auth flow detail was not retrievable without login.
+  - url: https://developer.leap.build/knowledge-base/general/configure-leap-data/
+    type: Documentation
+    note: Configure LEAP Data Questionnaire article, implying a structured data/schema configuration step for integrations.
+  - url: https://developer.leap.build/knowledge-base/general/demonstrating-your-integration-with-leap/
+    type: Documentation
+    note: Guidance for demonstrating a working integration as part of app review.
+  - url: https://developer.leap.build/knowledge-base/general/general-submission-process/
+    type: Documentation
+    note: How To Submit an App for Review - confirms Marketplace apps go through a review/approval process before listing.
+  - url: https://developer.leap.build/blog/release-notes-api-reference-v105/
+    type: Documentation
+    note: Release notes for "API Reference v1.0.5" - confirms the API Reference is versioned and actively maintained.
+  - url: https://developer.leap.build/blog/release-notes-api-reference-v104/
+    type: Documentation
+    note: Release notes for "API Reference v1.0.4".
+  - url: https://www.leap.build/docs/developer-api-reference/Getting-Started
+    type: Documentation
+    note: Official API Reference entry point; renders almost no server-side content, consistent with a login-gated JavaScript application.
+  - url: https://console.leap.build/auth/register
+    type: Documentation
+    note: Developer Console registration page.
+  - url: https://marketplace.leap.build/en-AU/apps
+    type: Documentation
+    note: LEAP Marketplace app directory, evidencing a real, in-production integration ecosystem (Xero, Zoom, InfoTrack, LawTap, and others).
+  - url: https://www.leaplegalsoftware.com/us/integrations/
+    type: Documentation
+    note: LEAP US integrations/apps page.
+  - url: https://www.leaplegalsoftware.com/us/pricing/
+    type: Documentation
+    note: Official US pricing page; quote-based, no published per-user rate.
+  - url: https://en.wikipedia.org/wiki/LEAP_Legal_Software
+    type: Documentation
+    note: Company background - founded 1992 in Sydney by Christian Beck; operates in Australia, UK, US, Canada, Ireland, New Zealand; privately held; data hosted on AWS.
+  - url: https://supergood.ai/docs/leap-api
+    type: Documentation
+    note: Third-party vendor describing an "unofficial" LEAP integration built via browser/session automation rather than LEAP's official REST API; not used as a source for confirmed endpoints.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists, and LEAP's own REST API Reference is
+    not publicly browsable - it is gated behind Developer Console
+    registration and renders as a JavaScript application with no crawlable
+    endpoint documentation. The apis.yml entries are scoped honestly as
+    modeled capability groupings (endpointsModeled: true) with no baseURL, no
+    OpenAPI document, and no fabricated endpoint list, since LEAP does not
+    disclose those details publicly.

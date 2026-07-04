@@ -1,0 +1,131 @@
+aid: leap-legal
+url: https://raw.githubusercontent.com/api-evangelist/leap-legal/refs/heads/main/apis.yml
+name: LEAP
+kind: company
+description: LEAP is cloud-based legal practice management software for law firms,
+  covering matter and contact management, document automation and court forms,
+  time recording, billing, and trust accounting, tightly integrated with Microsoft
+  365. LEAP operates a LEAP Developer Console and LEAP Marketplace
+  (developer.leap.build / console.leap.build) through which approved third-party
+  developers build REST-based integrations (an "API Reference" is versioned there,
+  e.g. v1.0.4, v1.0.5), but the technical reference - endpoint paths, base URL,
+  and authentication schema - sits behind developer registration and an app
+  review process rather than a public, self-serve API reference. There is no
+  publicly published OpenAPI document, public base URL, or anonymous API key
+  signup. Existing Marketplace integrations (Xero, Zoom, InfoTrack, LawTap, and
+  others) confirm the API surface is real and in production use, but its
+  concrete shape is not publicly disclosed.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Legal
+- LegalTech
+- Practice Management
+- Legal Accounting
+- Trust Accounting
+- Document Automation
+created: '2026-07-04'
+modified: '2026-07-04'
+specificationVersion: '0.19'
+apis:
+- aid: leap-legal:leap-matters-contacts-api
+  name: LEAP Matters & Contacts API
+  tags:
+  - Matters
+  - Clients
+  - Contacts
+  - Conflict Checks
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.leap.build/knowledge-base/general/general-getting-started/
+  properties:
+  - url: https://developer.leap.build/knowledge-base/general/general-getting-started/
+    type: Documentation
+  - url: https://developer.leap.build/knowledge-base/general/configure-leap-data/
+    type: Documentation
+  description: Modeled matter and contact/client management surface that third-party
+    Marketplace apps integrate against - matters (number, title, practice area,
+    status, responsible attorney), contacts/clients (individuals, organizations),
+    and party roles. Confirmed to exist by LEAP's Marketplace apps and the
+    "Configure LEAP Data" developer questionnaire, but no endpoint paths, base
+    URL, or schema are publicly published.
+  endpointsModeled: true
+- aid: leap-legal:leap-time-billing-api
+  name: LEAP Time & Billing API
+  tags:
+  - Time Recording
+  - Invoicing
+  - Billing
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.leap.build/
+  properties:
+  - url: https://www.leaplegalsoftware.com/us/integrations/
+    type: Documentation
+  description: Modeled time recording, invoicing, and billing surface, evidenced
+    by LEAP's own marketed "automatic timekeeping" and "multiple billing and
+    payment options" features and by production Marketplace integrations such
+    as Xero for accounting sync. No public endpoint list, base URL, or request/
+    response schema is disclosed.
+  endpointsModeled: true
+- aid: leap-legal:leap-trust-accounting-api
+  name: LEAP Trust Accounting API
+  tags:
+  - Trust Accounting
+  - Legal Accounting
+  - Compliance
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.leap.com.au/features/legal-content/
+  properties:
+  - url: https://www.leaplegalsoftware.com/us/pricing/
+    type: Documentation
+  description: Modeled trust ledger surface (receipts, disbursements, transfers,
+    balances) reflecting LEAP's marketed legal/trust accounting functionality,
+    a core, heavily regulated feature of the practice management product. No
+    public endpoint list, base URL, or schema is disclosed for programmatic
+    trust-accounting access.
+  endpointsModeled: true
+- aid: leap-legal:leap-documents-api
+  name: LEAP Documents API
+  tags:
+  - Documents
+  - Document Automation
+  - Court Forms
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.leap.build/knowledge-base/general/demonstrating-your-integration-with-leap/
+  properties:
+  - url: https://developer.leap.build/knowledge-base/general/demonstrating-your-integration-with-leap/
+    type: Documentation
+  - url: https://developer.leap.build/knowledge-base/general/general-submission-process/
+    type: Documentation
+  description: Modeled document metadata and automation surface - LEAP's core
+    "automated legal documents" and court-form assembly capability, tightly
+    coupled to Microsoft 365. Marketplace developers demonstrate document/
+    integration behavior as part of the app review process, but no public
+    endpoint list, base URL, or schema is disclosed.
+  endpointsModeled: true
+- aid: leap-legal:leap-calendar-api
+  name: LEAP Calendar API
+  tags:
+  - Calendar
+  - Scheduling
+  - Diary
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://marketplace.leap.build/en-AU/apps
+  properties:
+  - url: https://marketplace.leap.build/en-AU/apps
+    type: Documentation
+  description: Modeled calendar/diary and appointment-scheduling surface,
+    evidenced by production Marketplace scheduling integrations (e.g. LawTap)
+    and Microsoft 365 calendar integration. No public endpoint list, base URL,
+    or schema is disclosed.
+  endpointsModeled: true
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/leap-legal-software-usa
+- type: Website
+  url: https://leap.us
+- type: Documentation
+  url: https://developer.leap.build/
+- type: Plans
+  url: plans/leap-legal-plans-pricing.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
