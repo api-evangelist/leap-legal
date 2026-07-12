@@ -118,6 +118,8 @@ apis:
     or schema is disclosed.
   endpointsModeled: true
 common:
+- type: DomainSecurity
+  url: security/leap-legal-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/leap-legal-software-usa
 - type: Website
@@ -126,6 +128,8 @@ common:
   url: https://developer.leap.build/
 - type: Plans
   url: plans/leap-legal-plans-pricing.yml
+- url: https://leaplegalsoftware.com/us/blog/
+  type: Blog
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
