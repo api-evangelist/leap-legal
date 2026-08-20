@@ -30,6 +30,13 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/leap-legal.png
 tags:
 - Legal
+- Legal Tech
+- Practice Management
+- Legal Accounting
+- Trust Accounting
+- Document Automation
+tags_raw:
+- Legal
 - LegalTech
 - Practice Management
 - Legal Accounting
