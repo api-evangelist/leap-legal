@@ -15,6 +15,17 @@ description: LEAP is cloud-based legal practice management software for law firm
   signup. Existing Marketplace integrations (Xero, Zoom, InfoTrack, LawTap, and
   others) confirm the API surface is real and in production use, but its
   concrete shape is not publicly disclosed.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
