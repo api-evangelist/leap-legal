@@ -61,6 +61,11 @@ apis:
 - aid: leap-legal:leap-matters-contacts-api
   name: LEAP Matters & Contacts API
   tags:
+  - Matter
+  - Clients
+  - Contacts
+  - Conflict Checks
+  tags_raw:
   - Matters
   - Clients
   - Contacts
