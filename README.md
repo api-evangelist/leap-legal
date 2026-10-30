@@ -1,4 +1,4 @@
-# LEAP (leap-legal)
+# LEAP
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,119 +66,93 @@
 
 LEAP is cloud-based legal practice management software for law firms, covering matter and contact management, document automation and court forms, time recording, billing, and trust accounting, tightly integrated with Microsoft 365. LEAP operates a LEAP Developer Console and LEAP Marketplace (developer.leap.build / console.leap.build) through which approved third-party developers build REST-based integrations (an "API Reference" is versioned there, e.g. v1.0.4, v1.0.5), but the technical reference - endpoint paths, base URL, and authentication schema - sits behind developer registration and an app review process rather than a public, self-serve API reference. There is no publicly published OpenAPI document, public base URL, or anonymous API key signup. Existing Marketplace integrations (Xero, Zoom, InfoTrack, LawTap, and others) confirm the API surface is real and in production use, but its concrete shape is not publicly disclosed.
 
-**Access model:** Gated / partner-provisioned. Free developer registration at console.leap.build, followed by building against a login-gated API reference, then app submission and review before Marketplace listing. No public OpenAPI document, no anonymous API key signup. See [review.yml](review.yml) for the full findings.
+**Areas:** Legal · Legal Tech · Practice Management · Legal Accounting · Trust Accounting · Document Automation
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/leap-legal/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/leap-legal/refs/heads/main/apis.yml)
+## LEAP on APIs.io
 
-## Tags
+Everything profiled for LEAP is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/leap-legal/](https://apis.io/providers/leap-legal/)** — or go straight to one of the APIs or properties below.
 
-- Legal
-- LegalTech
-- Practice Management
-- Legal Accounting
-- Trust Accounting
-- Document Automation
+### APIs (5)
 
-## Timestamps
+- [LEAP Matters & Contacts API](https://apis.io/apis/leap-legal/leap-matters-contacts-api/) — Modeled matter and contact/client management surface that third-party Marketplace apps integrate against - matters (number, title, practice area, status,…
+- [LEAP Time & Billing API](https://apis.io/apis/leap-legal/leap-time-billing-api/) — Modeled time recording, invoicing, and billing surface, evidenced by LEAP's own marketed "automatic timekeeping" and "multiple billing and payment options"…
+- [LEAP Trust Accounting API](https://apis.io/apis/leap-legal/leap-trust-accounting-api/) — Modeled trust ledger surface (receipts, disbursements, transfers, balances) reflecting LEAP's marketed legal/trust accounting functionality, a core, heavily…
+- [LEAP Documents API](https://apis.io/apis/leap-legal/leap-documents-api/) — Modeled document metadata and automation surface - LEAP's core "automated legal documents" and court-form assembly capability, tightly coupled to Microsoft…
+- [LEAP Calendar API](https://apis.io/apis/leap-legal/leap-calendar-api/) — Modeled calendar/diary and appointment-scheduling surface, evidenced by production Marketplace scheduling integrations (e.g. LawTap) and Microsoft 365…
 
-- **Created:** 2026-07-04
-- **Modified:** 2026-07-04
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-*All APIs below are modeled capability groupings (`endpointsModeled: true`) inferred from LEAP's marketed product features, its developer knowledge base, and confirmed live Marketplace integrations - not from a crawled technical reference, since LEAP's API Reference is gated behind developer console login.*
+#### Security (1)
 
-### LEAP Matters & Contacts API
+Authentication, trust centre, and vulnerability disclosure.
 
-Modeled matter and contact/client management surface that third-party Marketplace apps integrate against - matters (number, title, practice area, status, responsible attorney), contacts/clients (individuals, organizations), and party roles. Confirmed to exist by LEAP's Marketplace apps and the "Configure LEAP Data" developer questionnaire, but no endpoint paths, base URL, or schema are publicly published.
+- [Leap Legal Domain Security](https://apis.io/security/leap-legal/leap-legal-domain-security/)
 
-- **Human URL:** [https://developer.leap.build/knowledge-base/general/general-getting-started/](https://developer.leap.build/knowledge-base/general/general-getting-started/)
+#### Plans and pricing (1)
 
-#### Tags
+Published plans, tiers and prices.
 
-- Matters
-- Clients
-- Contacts
-- Conflict Checks
+- [Leap Legal Plans Pricing](https://apis.io/plans/leap-legal/leap-legal-plans-pricing/)
 
-#### Properties
+## Where to find this API
 
-- [Documentation](https://developer.leap.build/knowledge-base/general/general-getting-started/)
-- [Documentation](https://developer.leap.build/knowledge-base/general/configure-leap-data/)
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-### LEAP Time & Billing API
-
-Modeled time recording, invoicing, and billing surface, evidenced by LEAP's own marketed "automatic timekeeping" and "multiple billing and payment options" features and by production Marketplace integrations such as Xero for accounting sync. No public endpoint list, base URL, or request/response schema is disclosed.
-
-- **Human URL:** [https://www.leap.build/](https://www.leap.build/)
-
-#### Tags
-
-- Time Recording
-- Invoicing
-- Billing
-
-#### Properties
-
-- [Documentation](https://www.leaplegalsoftware.com/us/integrations/)
-
-### LEAP Trust Accounting API
-
-Modeled trust ledger surface (receipts, disbursements, transfers, balances) reflecting LEAP's marketed legal/trust accounting functionality, a core, heavily regulated feature of the practice management product. No public endpoint list, base URL, or schema is disclosed for programmatic trust-accounting access.
-
-- **Human URL:** [https://www.leap.com.au/features/legal-content/](https://www.leap.com.au/features/legal-content/)
-
-#### Tags
-
-- Trust Accounting
-- Legal Accounting
-- Compliance
-
-#### Properties
-
-- [Documentation](https://www.leaplegalsoftware.com/us/pricing/)
-
-### LEAP Documents API
-
-Modeled document metadata and automation surface - LEAP's core "automated legal documents" and court-form assembly capability, tightly coupled to Microsoft 365. Marketplace developers demonstrate document/integration behavior as part of the app review process, but no public endpoint list, base URL, or schema is disclosed.
-
-- **Human URL:** [https://developer.leap.build/knowledge-base/general/demonstrating-your-integration-with-leap/](https://developer.leap.build/knowledge-base/general/demonstrating-your-integration-with-leap/)
-
-#### Tags
-
-- Documents
-- Document Automation
-- Court Forms
-
-#### Properties
-
-- [Documentation](https://developer.leap.build/knowledge-base/general/demonstrating-your-integration-with-leap/)
-- [Documentation](https://developer.leap.build/knowledge-base/general/general-submission-process/)
-
-### LEAP Calendar API
-
-Modeled calendar/diary and appointment-scheduling surface, evidenced by production Marketplace scheduling integrations (e.g. LawTap) and Microsoft 365 calendar integration. No public endpoint list, base URL, or schema is disclosed.
-
-- **Human URL:** [https://marketplace.leap.build/en-AU/apps](https://marketplace.leap.build/en-AU/apps)
-
-#### Tags
-
-- Calendar
-- Scheduling
-- Diary
-
-#### Properties
-
-- [Documentation](https://marketplace.leap.build/en-AU/apps)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/leap-legal-software-usa)
 - [Website](https://leap.us)
 - [Documentation](https://developer.leap.build/)
-- [Plans](plans/leap-legal-plans-pricing.yml)
+- [Blog](https://leaplegalsoftware.com/us/blog/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 6.4** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 62.5 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 2.4 |
+| Access clarity | 5.3 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/leap-legal/](https://apis.io/providers/leap-legal/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for LEAP: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/leap-legal/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
